@@ -1,0 +1,46 @@
+from tkinter import *
+from tkinter import messagebox
+
+root = Tk()
+root.title("To-Do List App")
+root.geometry("400x500")
+
+tasks = []
+
+def add_task():
+    task = task_entry.get()
+
+    if task != "":
+        tasks.append(task)
+        listbox.insert(END, task)
+        task_entry.delete(0, END)
+    else:
+        messagebox.showwarning("Warning", "Enter a task!")
+
+def delete_task():
+    try:
+        selected = listbox.curselection()[0]
+        listbox.delete(selected)
+        tasks.pop(selected)
+    except:
+        messagebox.showwarning("Warning", "Select a task!")
+
+def clear_tasks():
+    listbox.delete(0, END)
+    tasks.clear()
+
+Label(root, text="To-Do List", font=("Arial", 18)).pack(pady=10)
+
+task_entry = Entry(root, width=30)
+task_entry.pack(pady=10)
+
+Button(root, text="Add Task", command=add_task).pack(pady=5)
+
+listbox = Listbox(root, width=40, height=12)
+listbox.pack(pady=10)
+
+Button(root, text="Delete Task", command=delete_task).pack(pady=5)
+
+Button(root, text="Clear All", command=clear_tasks).pack(pady=5)
+
+root.mainloop()
