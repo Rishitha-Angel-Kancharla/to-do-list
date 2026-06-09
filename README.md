@@ -17,7 +17,7 @@ A simple GUI-based To-Do List application developed using Python and Tkinter.
 
 1. Clone repository
 
-git clone https://github.com/yourusername/todo-list-app.git
+git clone https://github.com/Rishitha-Angel-Kancharla/todo-list-app.git
 
 2. Navigate to folder
 
@@ -27,9 +27,5 @@ cd todo-list-app
 
 python main.py
 
-## Screenshots
-
-Add screenshots inside screenshots folder.
-
 ## Author
-Your Name
+Rishitha Angel.Kancharla
